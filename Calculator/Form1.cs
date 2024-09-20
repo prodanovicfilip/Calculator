@@ -12,9 +12,10 @@ namespace Calculator
             Add,
             Substract,
             Multiply,
-            Divide
+            Divide,
+            None
         }
-        Operations operation;
+        Operations operation = Operations.None;
         bool finished = false;
         double number1 = 0;
         double number2 = 0;
@@ -140,6 +141,7 @@ namespace Calculator
             finished = false;
             number1 = 0;
             number2 = 0;
+            operation = Operations.None;
         }
     }
 }
