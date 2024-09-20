@@ -87,40 +87,16 @@ namespace Calculator
                 switch (operation)
                 {
                     case Operations.Add:
-                        if (!double.TryParse(TB_Field.Text, out number2))
-                        {
-                            MessageBox.Show("Error: Not number");
-                            return;
-                        }
-                        TB_Result.Text = "" + _mathService.AddNumbers(number1, number2);
-                        finished = true;
+                        DoAddOperation();
                         break;
                     case Operations.Substract:
-                        if (!double.TryParse(TB_Field.Text, out number2))
-                        {
-                            MessageBox.Show("Error: Not number");
-                            return;
-                        }
-                        TB_Result.Text = "" + _mathService.SubstractNumbers(number1, number2);
-                        finished = true;
+                        DoSubstractOperation();
                         break;
                     case Operations.Multiply:
-                        if (!double.TryParse(TB_Field.Text, out number2))
-                        {
-                            MessageBox.Show("Error: Not number");
-                            return;
-                        }
-                        TB_Result.Text = "" + _mathService.MultiplyNumbers(number1, number2);
-                        finished = true;
+                        DoMultiplyOperation();
                         break;
                     case Operations.Divide:
-                        if (!double.TryParse(TB_Field.Text, out number2))
-                        {
-                            MessageBox.Show("Error: Not number");
-                            return;
-                        }
-                        TB_Result.Text = "" + _mathService.DivideNumbers(number1, number2);
-                        finished = true;
+                        DoDivideOperation();
                         break;
                     default:
                         MessageBox.Show("No operation");
@@ -130,10 +106,61 @@ namespace Calculator
             catch (Exception ex)
             {
                 MessageBox.Show($"{ex.Message}");
+                FocusAndSelect();
             }
 
         }
 
+        private void DoDivideOperation()
+        {
+            if (!double.TryParse(TB_Field.Text, out number2))
+            {
+                MessageBox.Show("Error: Not number");
+                return;
+            }
+            TB_Result.Text = "" + _mathService.DivideNumbers(number1, number2);
+            finished = true;
+        }
+
+        private void DoSubstractOperation()
+        {
+            if (!double.TryParse(TB_Field.Text, out number2))
+            {
+                MessageBox.Show("Error: Not number");
+                return;
+            }
+            TB_Result.Text = "" + _mathService.SubstractNumbers(number1, number2);
+            finished = true;
+        }
+
+        private void DoMultiplyOperation()
+        {
+            if (!double.TryParse(TB_Field.Text, out number2))
+            {
+                MessageBox.Show("Error: Not number");
+                return;
+            }
+            TB_Result.Text = "" + _mathService.MultiplyNumbers(number1, number2);
+            finished = true;
+        }
+
+        private void DoAddOperation()
+        {
+            if (!double.TryParse(TB_Field.Text, out number2))
+            {
+                MessageBox.Show("Error: Not number");
+                return;
+            }
+            TB_Result.Text = "" + _mathService.AddNumbers(number1, number2);
+            finished = true;
+        }
+
+        // DRY Princip dont repeat urself
+        private void FocusAndSelect()
+        {
+            TB_Field.Focus();
+            TB_Field.SelectAll();
+        }
         private void BT_Clear_Click(object sender, EventArgs e)
         {
             TB_Field.Text = String.Empty;

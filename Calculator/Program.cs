@@ -20,20 +20,10 @@ namespace Calculator
             Form1 form = null;
             Services.AddTransient<Form1>();
             Services.AddSingleton<IMathService, MathService>();
-            BuildServiceProvider(out form);
+            form = Services.BuildServiceProvider().GetRequiredService<Form1>();
             Application.Run(form);
         }
         private static IServiceCollection Services { get; set; } = new ServiceCollection();
-        private static ServiceProvider ServiceProvider { get; set; }
 
-        public static void BuildServiceProvider(out Form1 form)
-        {
-            ServiceProvider = Services.BuildServiceProvider();
-            form = ServiceProvider.GetRequiredService<Form1>();
-        }
-        public static T GetService<T>()
-        {
-            return (T)ServiceProvider.GetRequiredService<T>();
-        }
     }
 }
