@@ -36,21 +36,25 @@
             BT_Result = new Button();
             TB_Result = new TextBox();
             BT_Clear = new Button();
+            label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // TB_Field
             // 
-            TB_Field.Location = new Point(12, 28);
+            TB_Field.Location = new Point(17, 47);
+            TB_Field.Margin = new Padding(4, 5, 4, 5);
             TB_Field.Name = "TB_Field";
-            TB_Field.Size = new Size(140, 23);
+            TB_Field.Size = new Size(198, 31);
             TB_Field.TabIndex = 0;
             // 
             // BT_plus
             // 
             BT_plus.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            BT_plus.Location = new Point(12, 64);
+            BT_plus.Location = new Point(17, 107);
+            BT_plus.Margin = new Padding(4, 5, 4, 5);
             BT_plus.Name = "BT_plus";
-            BT_plus.Size = new Size(140, 30);
+            BT_plus.Size = new Size(200, 50);
             BT_plus.TabIndex = 1;
             BT_plus.Text = "+";
             BT_plus.UseVisualStyleBackColor = true;
@@ -59,9 +63,10 @@
             // BT_Minus
             // 
             BT_Minus.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            BT_Minus.Location = new Point(12, 100);
+            BT_Minus.Location = new Point(17, 167);
+            BT_Minus.Margin = new Padding(4, 5, 4, 5);
             BT_Minus.Name = "BT_Minus";
-            BT_Minus.Size = new Size(140, 30);
+            BT_Minus.Size = new Size(200, 50);
             BT_Minus.TabIndex = 2;
             BT_Minus.Text = "−";
             BT_Minus.UseVisualStyleBackColor = true;
@@ -70,9 +75,10 @@
             // BT_Multi
             // 
             BT_Multi.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            BT_Multi.Location = new Point(12, 136);
+            BT_Multi.Location = new Point(17, 227);
+            BT_Multi.Margin = new Padding(4, 5, 4, 5);
             BT_Multi.Name = "BT_Multi";
-            BT_Multi.Size = new Size(140, 30);
+            BT_Multi.Size = new Size(200, 50);
             BT_Multi.TabIndex = 3;
             BT_Multi.Text = "x";
             BT_Multi.UseVisualStyleBackColor = true;
@@ -81,9 +87,10 @@
             // BT_Division
             // 
             BT_Division.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            BT_Division.Location = new Point(12, 172);
+            BT_Division.Location = new Point(17, 287);
+            BT_Division.Margin = new Padding(4, 5, 4, 5);
             BT_Division.Name = "BT_Division";
-            BT_Division.Size = new Size(140, 30);
+            BT_Division.Size = new Size(200, 50);
             BT_Division.TabIndex = 4;
             BT_Division.Text = "/";
             BT_Division.UseVisualStyleBackColor = true;
@@ -92,9 +99,10 @@
             // BT_Result
             // 
             BT_Result.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            BT_Result.Location = new Point(195, 64);
+            BT_Result.Location = new Point(279, 107);
+            BT_Result.Margin = new Padding(4, 5, 4, 5);
             BT_Result.Name = "BT_Result";
-            BT_Result.Size = new Size(140, 30);
+            BT_Result.Size = new Size(200, 50);
             BT_Result.TabIndex = 5;
             BT_Result.Text = "=";
             BT_Result.UseVisualStyleBackColor = true;
@@ -102,27 +110,49 @@
             // 
             // TB_Result
             // 
-            TB_Result.Location = new Point(195, 28);
+            TB_Result.Location = new Point(279, 47);
+            TB_Result.Margin = new Padding(4, 5, 4, 5);
             TB_Result.Name = "TB_Result";
-            TB_Result.Size = new Size(140, 23);
+            TB_Result.Size = new Size(198, 31);
             TB_Result.TabIndex = 6;
             // 
             // BT_Clear
             // 
             BT_Clear.Font = new Font("Segoe UI", 12F);
-            BT_Clear.Location = new Point(195, 100);
+            BT_Clear.Location = new Point(279, 167);
+            BT_Clear.Margin = new Padding(4, 5, 4, 5);
             BT_Clear.Name = "BT_Clear";
-            BT_Clear.Size = new Size(140, 30);
+            BT_Clear.Size = new Size(200, 50);
             BT_Clear.TabIndex = 7;
             BT_Clear.Text = "Clear";
             BT_Clear.UseVisualStyleBackColor = true;
             BT_Clear.Click += BT_Clear_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(17, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(77, 25);
+            label1.TabIndex = 8;
+            label1.Text = "Number";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(279, 17);
+            label2.Name = "label2";
+            label2.Size = new Size(59, 25);
+            label2.TabIndex = 9;
+            label2.Text = "Result";
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(398, 286);
+            ClientSize = new Size(569, 477);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(BT_Clear);
             Controls.Add(TB_Result);
             Controls.Add(BT_Result);
@@ -131,8 +161,9 @@
             Controls.Add(BT_Minus);
             Controls.Add(BT_plus);
             Controls.Add(TB_Field);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Calculator";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -147,5 +178,7 @@
         private Button BT_Result;
         private TextBox TB_Result;
         private Button BT_Clear;
+        private Label label1;
+        private Label label2;
     }
 }

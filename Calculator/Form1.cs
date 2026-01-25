@@ -25,6 +25,7 @@ namespace Calculator
         {
             InitializeComponent();
             _mathService = mathService;
+            label1.Text = "Number 1";
         }
 
         private void BT_plus_Click(object sender, EventArgs e)
@@ -38,6 +39,7 @@ namespace Calculator
             operation = Operations.Add;
             TB_Field.Focus();
             TB_Field.SelectAll();
+            label1.Text = "Number 2";
         }
 
         private void BT_Minus_Click(object sender, EventArgs e)
@@ -51,6 +53,7 @@ namespace Calculator
             operation = Operations.Substract;
             TB_Field.Focus();
             TB_Field.SelectAll();
+            label1.Text = "Number 2";
         }
 
         private void BT_Multi_Click(object sender, EventArgs e)
@@ -64,6 +67,7 @@ namespace Calculator
             operation = Operations.Multiply;
             TB_Field.Focus();
             TB_Field.SelectAll();
+            label1.Text = "Number 2";
         }
 
         private void BT_Division_Click(object sender, EventArgs e)
@@ -77,6 +81,7 @@ namespace Calculator
             operation = Operations.Divide;
             TB_Field.Focus();
             TB_Field.SelectAll();
+            label1.Text = "Number 2";
         }
 
         private void BT_Result_Click(object sender, EventArgs e)
@@ -169,6 +174,7 @@ namespace Calculator
             number1 = 0;
             number2 = 0;
             operation = Operations.None;
+            label1.Text = "Number 1";
         }
     }
 }
